@@ -6,6 +6,7 @@ import { Collections } from './screens/Collections'
 import { CustomerDetail, CustomerForm, Customers } from './screens/Customers'
 import { Home } from './screens/Home'
 import { LanguagePick } from './screens/LanguagePick'
+import { Ledger } from './screens/Ledger'
 import { LoanDetail } from './screens/LoanDetail'
 import { LoanForm } from './screens/LoanForm'
 import { MenuSheet } from './screens/MenuSheet'
@@ -45,7 +46,10 @@ function screenFor(r: Route): { node: ReactNode; tab?: string; fab?: boolean } {
     }
   if (a === 'receipt' && b) return { node: <Receipt txId={b} /> }
   if (a === 'collections') return { node: <Collections />, tab: '/collections', fab: true }
-  if (a === 'reports') return { node: <Reports />, tab: '/reports', fab: true }
+  if (a === 'reports') {
+    if (b === 'ledger') return { node: <Ledger />, tab: '/reports' }
+    return { node: <Reports />, tab: '/reports', fab: true }
+  }
   if (a === 'settings') return { node: <Settings /> }
   if (a === 'backup') return { node: <BackupScreen /> }
   return { node: <Home />, tab: '/', fab: true }

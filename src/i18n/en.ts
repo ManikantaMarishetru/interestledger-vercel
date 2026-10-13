@@ -327,6 +327,17 @@ export const en = {
   'reports.export_loans': 'Loan balances',
   'reports.export_daily': 'Daily cash',
   'reports.export_monthly': 'Monthly cash',
+  'reports.ledger': 'Credits & debits (PDF)',
+
+  'ledger.title': 'Credits & debits',
+  'ledger.hint': 'Money you gave (credit) and money you got back (debit). Waivers and cancelled entries are listed but not counted in the totals.',
+  'ledger.col_credit': 'Given (credit)',
+  'ledger.col_debit': 'Received (debit)',
+  'ledger.total': 'Total',
+  'ledger.balance': 'Still with customers',
+  'ledger.empty': 'No entries in this period.',
+  'ledger.reversed': 'cancelled',
+  'ledger.footer': 'Printed on {date}. Amounts in Indian rupees (₹). Cash only.',
 
   'statement.title': 'Loan statement',
   'statement.cash_only': 'Payment method: Cash',

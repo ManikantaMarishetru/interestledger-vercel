@@ -196,6 +196,9 @@ export function Reports() {
       <Card>
         <p className="mb-3 text-base text-ink2">{t('reports.export_hint')}</p>
         <div className="grid gap-2.5 sm:grid-cols-2">
+          <Button icon={<FileText size={20} />} onClick={() => (window.location.hash = '#/reports/ledger')}>
+            {t('reports.ledger')}
+          </Button>
           <Button icon={<Download size={20} />} onClick={() => downloadText(`InterestLedger-transactions-${stamp}.csv`, transactionsCsv(data.customers, data.loans, data.transactions, from, to), 'text/csv;charset=utf-8')}>
             {t('reports.export_tx')}
           </Button>
