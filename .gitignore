@@ -1,34 +1,40 @@
-# Dependencies
-node_modules/
-
-# Nested separate project (not part of this app)
-omnisearch-ai/
-
-# Build/test output
-dist/
-build/
-.next/
+# Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Android / Capacitor (see android/.gitignore for platform detail)
-android/.gradle/
-android/local.properties
-android/build/
-android/app/build/
-android/app/src/main/assets/public/
-android/app/src/main/assets/capacitor.config.json
-android/app/src/main/assets/capacitor.plugins.json
+node_modules
+dist
+dist-ssr
+*.local
 
-# Secrets and local env
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vitest/
+
+# Android build output
+InterestLedger.apk
+
+# Vercel upload folder (tools/build_vercel.ps1)
+deploy/
+
+# Vercel CLI link + local env (machine-specific, never commit)
+.vercel
 .env
 .env.local
-*.jks
-*.keystore
+.env*.local
 
-# Editor / OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-.vercel
-.env*
+# Nested separate project on this machine (not part of this app)
+omnisearch-ai/

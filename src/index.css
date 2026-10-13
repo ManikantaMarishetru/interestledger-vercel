@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/noto-sans-kannada';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme inline {
+  --font-sans: 'Inter Variable', 'Noto Sans Kannada Variable', system-ui, sans-serif;
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-sunk: var(--c-sunk);
+  --color-ink: var(--c-ink);
+  --color-ink2: var(--c-ink2);
+  --color-ink3: var(--c-ink3);
+  --color-line: var(--c-line);
+  --color-brand: var(--c-brand);
+  --color-brand-ink: var(--c-brand-ink);
+  --color-brand-soft: var(--c-brand-soft);
+  --color-paid: var(--c-paid);
+  --color-paid-soft: var(--c-paid-soft);
+  --color-part: var(--c-part);
+  --color-part-soft: var(--c-part-soft);
+  --color-due: var(--c-due);
+  --color-due-soft: var(--c-due-soft);
+  --color-none: var(--c-none);
+  --color-none-soft: var(--c-none-soft);
+}
+
+:root {
+  --c-bg: #f4f2ec;
+  --c-surface: #ffffff;
+  --c-sunk: #f8f7f3;
+  --c-ink: #1a1a17;
+  --c-ink2: #4f4b43;
+  --c-ink3: #7d786d;
+  --c-line: #e2ded2;
+  --c-brand: #0e6b4e;
+  --c-brand-ink: #ffffff;
+  --c-brand-soft: #e2f1e9;
+  --c-paid: #11714b;
+  --c-paid-soft: #dcf1e6;
+  --c-part: #9a5200;
+  --c-part-soft: #fcecd0;
+  --c-due: #b42318;
+  --c-due-soft: #fde3df;
+  --c-none: #66625a;
+  --c-none-soft: #eceae4;
+  color-scheme: light;
+  font-size: 106.25%; /* 17px */
+}
+
+:root[data-theme='dark'] {
+  --c-bg: #0e1210;
+  --c-surface: #161b18;
+  --c-sunk: #1b211d;
+  --c-ink: #eef0ec;
+  --c-ink2: #c0c6bf;
+  --c-ink3: #8b928b;
+  --c-line: #2a322d;
+  --c-brand: #3cc48f;
+  --c-brand-ink: #05261a;
+  --c-brand-soft: #143426;
+  --c-paid: #55dca0;
+  --c-paid-soft: #12321f;
+  --c-part: #f5b547;
+  --c-part-soft: #392a0e;
+  --c-due: #ff8a80;
+  --c-due-soft: #3c1714;
+  --c-none: #9aa19a;
+  --c-none-soft: #232925;
+  color-scheme: dark;
+}
+
+:root[data-size='large'] {
+  font-size: 118.75%; /* 19px */
+}
+:root[data-size='xlarge'] {
+  font-size: 131.25%; /* 21px */
+}
+
+html,
+body {
+  background: var(--c-bg);
+  color: var(--c-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+:lang(kn) body {
+  line-height: 1.6;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--c-brand) 70%, transparent);
+  outline-offset: 2px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  opacity: 0.7;
+  cursor: pointer;
+}
+[data-theme='dark'] input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+@keyframes il-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+@keyframes il-fade {
+  from {
+    opacity: 0;
+  }
+}
+.anim-pop {
+  animation: il-pop 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.anim-fade {
+  animation: il-fade 160ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .anim-pop,
+  .anim-fade {
+    animation: none;
+  }
+}
+
+/* Printing: only the printable area, black on white. */
+@media print {
+  :root {
+    --c-bg: #fff;
+    --c-surface: #fff;
+    --c-sunk: #fff;
+    --c-ink: #000;
+    --c-ink2: #222;
+    --c-ink3: #444;
+    --c-line: #999;
+    font-size: 11pt;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-plain {
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}
