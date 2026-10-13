@@ -30,3 +30,5 @@ android/app/src/main/assets/capacitor.plugins.json
 .idea/
 .DS_Store
 Thumbs.db
+.vercel
+.env*
