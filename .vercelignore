@@ -1,0 +1,15 @@
+# The deployed site is served from the repo root (index.html + css/ + js/ + sw.js).
+# These folders are source/tooling only and should not be published.
+
+android/
+tests/
+scripts/
+node_modules/
+www/
+
+.gitignore
+package.json
+package-lock.json
+capacitor.config.json
+README.md
+*.test.js
