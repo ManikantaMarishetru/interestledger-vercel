@@ -1,0 +1,27 @@
+{
+  "name": "interestledger",
+  "version": "0.1.0",
+  "description": "InterestLedger — cash-only daily interest ledger for small lenders in India. Local-first, no sync.",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve@14.2.4 . -l 5173",
+    "test": "node --test tests/",
+    "build": "node scripts/build.js",
+    "lint": "node scripts/lint.js",
+    "mobile:copy": "node scripts/mobile-copy.js",
+    "mobile:sync": "npm run mobile:copy && cap sync android"
+  },
+  "keywords": [
+    "interest",
+    "ledger",
+    "lending",
+    "india"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "6.2.1",
+    "@capacitor/cli": "6.2.1",
+    "@capacitor/core": "6.2.1",
+    "@capacitor/status-bar": "6.0.1"
+  }
+}

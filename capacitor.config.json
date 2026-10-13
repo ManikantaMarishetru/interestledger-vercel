@@ -1,0 +1,6 @@
+{
+  "appId": "com.interestledger.app",
+  "appName": "InterestLedger",
+  "webDir": ".",
+  "backgroundColor": "#F7F6F2"
+}

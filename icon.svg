@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="InterestLedger ledger icon">
+  <rect width="512" height="512" rx="96" fill="#0C7A3D"/>
+  <rect x="140" y="96" width="232" height="320" rx="20" fill="#FFFFFF"/>
+  <rect x="140" y="96" width="48" height="320" rx="20" fill="#E4F3E8"/>
+  <rect x="212" y="136" width="120" height="22" rx="11" fill="#0C7A3D"/>
+  <rect x="212" y="176" width="120" height="12" rx="6" fill="#CFC7B2"/>
+  <rect x="212" y="200" width="88" height="12" rx="6" fill="#E8E3D8"/>
+  <rect x="212" y="236" width="120" height="12" rx="6" fill="#CFC7B2"/>
+  <rect x="212" y="260" width="88" height="12" rx="6" fill="#E8E3D8"/>
+  <rect x="212" y="296" width="120" height="12" rx="6" fill="#CFC7B2"/>
+  <rect x="212" y="320" width="88" height="12" rx="6" fill="#E8E3D8"/>
+  <rect x="212" y="356" width="120" height="14" rx="7" fill="#0C7A3D"/>
+</svg>

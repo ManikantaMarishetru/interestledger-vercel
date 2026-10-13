@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0C7A3D" />
+  <meta name="description" content="InterestLedger — cash-only daily interest ledger on this device." />
+  <title>InterestLedger</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="InterestLedger" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Font stack: system + "Noto Sans Kannada" for Kannada script (no webfont download, works offline). -->
+</head>
+<body>
+  <div id="shell">
+    <header class="app-header no-print">
+      <div class="brand">InterestLedger</div>
+      <div class="brand-sub">Cash-only daily interest ledger</div>
+    </header>
+
+    <main id="main">
+      <section id="view-home" class="active" aria-label="Home">
+        <div id="home-app"></div>
+        <div class="card">
+          <strong>Today</strong>
+          <p>See due collections, active loans and totals for today.</p>
+          <button id="record-collection" class="btn btn-primary" type="button">Record Collection</button>
+        </div>
+      </section>
+
+      <section id="view-customers" aria-label="Customers">
+        <div id="customers-app"></div>
+      </section>
+
+      <section id="view-collections" aria-label="Collections">
+        <div id="collections-app"></div>
+      </section>
+
+      <section id="view-reports" aria-label="Reports">
+        <div id="reports-app"></div>
+      </section>
+
+      <section id="view-more" aria-label="More">
+        <div id="more-app"></div>
+      </section>
+
+      <section id="view-customer-detail" aria-label="Customer detail">
+        <div id="customer-detail-app"></div>
+      </section>
+
+      <section id="view-loan-detail" aria-label="Loan detail">
+        <div id="loan-detail-app"></div>
+      </section>
+
+      <section id="view-receipt" aria-label="Receipt">
+        <div id="receipt-app"></div>
+      </section>
+    </main>
+
+    <div id="bottom-nav" class="no-print">
+      <nav id="main-nav" aria-label="Main">
+        <button type="button" data-view="home" class="active">Home</button>
+        <button type="button" data-view="customers">Customers</button>
+        <button type="button" data-view="collections">Collections</button>
+        <button type="button" data-view="reports">Reports</button>
+        <button type="button" id="more-menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="more-menu">More</button>
+      </nav>
+      <div id="more-menu" hidden>
+        <button type="button" data-more="settings">Settings</button>
+        <button type="button" data-more="language">Language</button>
+        <button type="button" data-more="backup">Backup</button>
+        <button type="button" data-more="restore">Restore</button>
+      </div>
+    </div>
+
+    <footer class="no-print">
+      <small>Records stay on this device. Clearing app data erases them. Use More &gt; Backup often and keep copies in two places.</small>
+      <small>Follow local money-lending rules. Confirm allowed interest and licences with local authorities before lending.</small>
+    </footer>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="print-area" aria-hidden="true"></div>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    import { registerSW } from "./js/pwa.js";
+    try { registerSW(); } catch (e) { /* offline-safe: app works without service worker */ }
+  </script>
+</body>
+</html>

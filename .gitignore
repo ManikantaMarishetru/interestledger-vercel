@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Nested separate project (not part of this app)
+omnisearch-ai/
+
+# Build/test output
+dist/
+build/
+.next/
+*.log
+
+# Android / Capacitor (see android/.gitignore for platform detail)
+android/.gradle/
+android/local.properties
+android/build/
+android/app/build/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+
+# Secrets and local env
+.env
+.env.local
+*.jks
+*.keystore
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
